@@ -7,13 +7,22 @@ body{
 
 }
 
+.intro {
+  margin: auto;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: rgba(255, 255, 255, 0.61);
     overflow: hidden;
     display: flex;
     justify-content: space-evenly;
+    
 
+}
+
+.headshot{
+  margin: auto;
 }
   
   /* Style the links inside the navigation bar */

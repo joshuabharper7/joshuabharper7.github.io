@@ -77,7 +77,11 @@ body{
     color:black;
 }
 
-.CProject1,.CProject2{
+.CProject1{
+  margin-left: -11em;
+}
+
+.CProject2{
     margin: 3em;
 }
 

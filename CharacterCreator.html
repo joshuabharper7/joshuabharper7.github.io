@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Character Creation</title>
+    <link rel="stylesheet" href="css/CharacterCreator.css">
+    <script src="js/CharacterCreator.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Dungeons & Dragons Character Creation</h1>
+    </header>
+    <main>
+        <section class="options">
+            <input type="checkbox" id="chkRandom" name="chkRandom" value="random">
+            <label for="chkRandom">Randomize All</label><br>
+        </section>
+        <div id="manualSelection">
+            <section class="options">
+                <h1>Choose Your Level:<input type="checkbox" id="chkRandomLevel" name="chkRandomLevel" value="random">
+                    <label for="chkRandomLevel" style="font-size: x-small;">Randomize Level</label><br>
+                </h2>
+                <select name="levels" id="levels">
+                    <option value="">Select a Level</option>
+                </select>
+            </section>
+            <section class="options">
+                <h1>Choose Your Race:<input type="checkbox" id="chkRandomRace" name="chkRandomRace" value="random">
+                    <label for="chkRandomRace" style="font-size: x-small;">Randomize Race</label><br>
+                </h2>
+                <select name="races" id="races">
+                    <option value="">Select a Race</option>
+                </select>
+            </section>
+            <section class="options">
+                <h1>Choose Your Class:<input type="checkbox" id="chkRandomClass" name="chkRandomClass" value="random">
+                    <label for="chkRandomClass" style="font-size: x-small;">Randomize Class</label><br>
+                </h2>
+                <select name="classes" id="classes">
+                    <option value="">Select a Class</option>
+                </select>
+            </section>
+            <section class="options">
+                <h1>Choose Your Subclass:<input type="checkbox" id="chkRandomSubclass" name="chkRandomSubclass" value="random">
+                    <label for="chkRandomSubclass" style="font-size: x-small;">Randomize Subclass</label><br>
+                </h2>
+                <select name="subclasses" id="subclasses">
+                    <option value="">Select a Subclass</option>
+                </select>
+            </section>
+            <section class="options">
+                <h1>Choose Your Background:<input type="checkbox" id="chkRandomBackground" name="chkRandomBackground" value="random">
+                    <label for="chkRandomBackground" style="font-size: x-small;">Randomize Background</label><br>
+                </h2>
+                <select name="background" id="background">
+                    <option value="">Select a Background</option>
+                </select>
+            </section>
+        </div>
+        <br/>
+        <div id="characterDetails" style="display: none;">
+            <h1>Character Details</h1>
+            <h3 id="detailLevel">Level: </h3>
+            <h3 id="detailRace">Race: </h3>
+            <h3 id="detailClass">Class: </h3>
+            <h3 id="detailSubClass">Subclass: </h3>
+            <h3 id="detailBackground">Background: </h3>
+            <h3 id="detailStats">Ability Scores- </h3>
+            <ul>
+                <li id="strStat">STR: </li>
+                <li id="dexStat">DEX: </li>
+                <li id="conStat">CON: </li>
+                <li id="intStat">INT: </li>
+                <li id="wisStat">WIS: </li>
+                <li id="chaStat">CHA: </li>
+            </ul>
+        </div>
+        <br/>
+        <button onclick="CreateCharacter()">Create Character</button>
+    </main>
+</body>
+
+</html>

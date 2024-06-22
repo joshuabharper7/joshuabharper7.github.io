@@ -131,7 +131,7 @@ function FillSubclassDdl(selectedClass) {
             selectedClassArray = subclasses.Warlock
             break;
         case "Wizard":
-            selectedClassArray = subclasses.Warlock
+            selectedClassArray = subclasses.Wizard
             break;
         default:
             isDefault = true;

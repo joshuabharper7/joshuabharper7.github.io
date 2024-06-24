@@ -1,5 +1,66 @@
 // Array of races, classes, subclasses, and backgrounds
 const levels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+const genders = ["male", "female"];
+const names = {
+    maleFirstNames: [
+        'Alden', 'Thorn', 'Kael', 'Cassian', 'Drystan', 'Finnian', 'Lysander', 'Rhys', 'Valerian', 'Zephyr', 'Caelum', 'Ryker', 'Lirion', 'Emeric', 'Orin', 'Tristan', 'Gareth', 'Darian', 'Rowan', 'Bastian', 'Gideon',
+        'Aldric', 'Javan', 'Corin', 'Quinlan', 'Evander', 'Perrin', 'Kieran', 'Daxton', 'Aurelian', 'Lorcan', 'Soren', 'Reid', 'Azriel', 'Lucien', 'Nikolai', 'Cedric', 'Eamon', 'Devlin', 'Tharin', 'Roran', 'Ezio', 'Tobias',
+        'Aldenon', 'Gavriel', 'Leandros', 'Ronan', 'Kaelin', 'Baelor', 'Trystan', 'Aldenar', 'Merek', 'Khalen', 'Thorne', 'Cedron', 'Zador', 'Ryland', 'Varian', 'Quillon', 'Hawke', 'Dresden', 'Xavier', 'Dairon',
+        'Baelon', 'Renly', 'Kaelari', 'Bardan', 'Sarion', 'Rendon', 'Thalion', 'Korin', 'Ryden', 'Tarron', 'Baelorin', 'Elion', 'Valenar', 'Emryk', 'Thorinon', 'Kastor', 'Rhenar', 'Kiron', 'Brennan', 'Davian', 'Lorand',
+        'Vaelin', 'Kairon', 'Haldor', 'Aksel', 'Myron', 'Elianar', 'Ryslan', 'Travan', 'Arias', 'Seraph', 'Eldric', 'Brennon', 'Caelinor', 'Tavion', 'Korban', 'Elarion', 'Cassion', 'Donovan', 'Jarek', 'Valdor',
+        'Sorenus', 'Korvin', 'Baelamir', 'Thadron', 'Aureon', 'Rhovan', 'Tallis', 'Garan', 'Daelen', 'Kelton', 'Rykar', 'Zayn', 'Harkin', 'Kyras', 'Aldricus', 'Baelric', 'Ulric', 'Rhivan', 'Dorian', 'Ravion',
+        'Kaedon', 'Velrian', 'Tharon', 'Caelarion', 'Tyren', 'Baelin', 'Kaelavar', 'Elderon', 'Syrus', 'Khalion', 'Galadon', 'Dargan', 'Karlon', 'Baelricus', 'Malakar', 'Eldrin', 'Sylvan', 'Raelor', 'Korinor',
+        'Aldricorn', 'Zarion', 'Kethan', 'Drexel', 'Fendrel', 'Quillon', 'Bryant', 'Varenth', 'Astorin', 'Wystan', 'Rostam', 'Dexon', 'Baelinor', 'Zaelon', 'Corvus', 'Haldon', 'Elrik', 'Kaelaric', 'Eldros', 'Caliban',
+        'Ryloth', 'Zandor', 'Alaric', 'Varro', 'Sylandor', 'Baldrick', 'Thaleon', 'Tybalt', 'Grendan', 'Cyprian', 'Morrigan', 'Zephyros', 'Kelvorn', 'Ryshen', 'Vaelorin', 'Theros', 'Brynmor', 'Gawain', 'Eldaros', 'Baelion',
+        'Kemarr', 'Vaelen', 'Thadur', 'Aedan', 'Zandrik', 'Kaelorin', 'Bromir', 'Daelrick', 'Xandor', 'Maelorin', 'Kaelvor', 'Vaelanor', 'Thalean', 'Eldrion', 'Zanderon', 'Ryshar', 'Baelrian', 'Grendor', 'Cassir',
+        'Kaelanor', 'Daelorin', 'Rylothar', 'Avalon', 'Tybaldor', 'Zanthar', 'Keiran', 'Vaelaron', 'Calderon', 'Trevan', 'Gavain', 'Dexar', 'Maelor', 'Kainan', 'Rykanor', 'Thadrik', 'Baelron', 'Zyron', 'Korrin',
+        'Daelorn', 'Vaeloran', 'Baelmor', 'Kelvar', 'Thaleor', 'Rystan', 'Zandorin', 'Vaeron', 'Calidor', 'Kaelon', 'Davon', 'Maelorn', 'Eldran', 'Thaedin', 'Zyrion', 'Korrick', 'Vaelar', 'Rythor', 'Baelrik',
+        'Thordar', 'Alderon', 'Kaldor', 'Baelgrin', 'Vaelrin', 'Rylandor', 'Eldarian', 'Caldrin', 'Zyreth', 'Dagon', 'Valdorin', 'Kormac', 'Bralon', 'Aldaron', 'Hylandor', 'Gavorn', 'Zandalar', 'Thalonis', 'Keldor', 'Eldaron',
+        'Thalrich', 'Aldaris', 'Korvair', 'Baelonius', 'Vaelmont', 'Rysarth', 'Tharion', 'Drexar', 'Valenaric', 'Kordan', 'Baelorik', 'Varianus', 'Eldros', 'Coralon', 'Zyphrus', 'Baelgrim', 'Vastrin', 'Ryken', 'Eldricus',
+        'Kalrak', 'Borion', 'Randalor', 'Grendorin', 'Zandorik', 'Tharador', 'Baelarik', 'Valeron', 'Erikson', 'Callum', 'Zyronos', 'Kaelmar', 'Davaris', 'Maelorick', 'Rykus', 'Thalgrim', 'Vaelrog', 'Cedronus',
+        'Zarion', 'Evarik', 'Baelorius', 'Vaelenon', 'Kaldrik', 'Daelric', 'Thornor', 'Rystanor', 'Zakar', 'Baelorian', 'Vaelricus', 'Aldarion', 'Kendar', 'Bryndorin', 'Eldarick', 'Caldrick', 'Zaridian', 'Galdoros',
+        'Thalonor', 'Baelthorn', 'Vaelandor', 'Rysharok', 'Eldor', 'Kormin', 'Bradan', 'Aldorius', 'Hyldorin', 'Gavainor', 'Zephron', 'Dakar', 'Valdoran', 'Korial', 'Bralorn', 'Galadric', 'Zorphus', 'Thorus'
+    ],
+    femaleFirstNames: [
+        "Seraphina", "Elowen", "Thalia", "Lysandra", "Calista", "Isabeau", "Evadne", "Rowena", "Ariadne", "Amara", "Elara", "Lyra", "Fiora",
+        "Morwenna", "Cressida", "Elysia", "Selene", "Melisande", "Lilith", "Aurelia", "Maelle", "Iliana", "Sylvana", "Elara", "Hermione", "Evangeline",
+        "Phaedra", "Darielle", "Nerida", "Astraea", "Odessa", "Meliora", "Leocadia", "Ginevra", "Isolde", "Aveline", "Theodosia", "Ysolde", "Zephyrine",
+        "Esmeralda", "Thalassa", "Orinthia", "Elowen", "Endellion", "Tanith", "Merewen", "Xanthe", "Tallulah", "Saoirse", "Cassiopeia", "Vespera",
+        "Amarantha", "Cerelia", "Althea", "Naiara", "Rhiannon", "Arista", "Evanthe", "Isannah", "Mirella", "Tullia", "Olivetta", "Quintessa", "Romilda",
+        "Zephirine", "Idony", "Eirlys", "Gwyneira", "Aleris", "Eirian", "Nerissa", "Thessalia", "Noelia", "Xylia", "Zephyra", "Zariah", "Fioralba", "Cyra",
+        "Merula", "Nerine", "Thalassia", "Malva", "Seraphine", "Eirlys", "Phaedra", "Ceridwen", "Iseult", "Delphine", "Amalthea", "Ferelith", "Kerensa", 
+        "Ilysia", "Idalia", "Thalassa", "Elowyn", "Altheia", "Ilaria", "Isolena", "Amarina", "Oriana", "Evelina", "Melantha", "Cordelia", "Valeriana", 
+        "Elysiana", "Aroha", "Serenelle", "Ismeria", "Aurielle", "Lyrisa", "Vaelora", "Thalora", "Eirabella", "Ismerelda", "Oleandra", "Seraphita", 
+        "Vaeloria", "Thessara", "Amaranthea", "Ysadora", "Iliania", "Eloweth", "Isolara", "Lyrielle", "Calantha", "Phaedrielle", "Thalara", "Avelia", 
+        "Meliorana", "Evanie", "Nerithia", "Elysara", "Zephira", "Cassiara", "Fyrella", "Aerilyn", "Delain", "Mirabelle", "Celestia", "Ariadnel", "Ravenna", 
+        "Isolind", "Vesperine", "Thalara", "Eliora", "Calantha", "Lysandria", "Amarantha", "Thessara", "Fiorella", "Aureliana", "Sylvienne", "Elowyn", 
+        "Cassandra", "Morvanna", "Leandra", "Eveloria", "Amarisa", "Rhoswen", "Avalonia", "Elysandria", "Persephone", "Andromeda", "Isadora", "Elara", 
+        "Alandra", "Melisara", "Zephyra", "Galatea", "Seraphine", "Aureline", "Evadelle", "Calanthe", "Lyria", "Mirelle", "Thalassia", "Faela", "Elidora", 
+        "Seraphiel", "Valeriana", "Eirianthe", "Caelia", "Amaryl"
+      ],
+      lastNames: [
+        "Silverwood", "Frostbane", "Windchaser", "Dragonscale", "Stormforged", "Ravencrest", "Oakenshield", "Starfall", "Moonshadow", "Thunderheart", "Dragonflame", "Mistweaver", "Whisperwind", "Ironhammer", 
+        "Shadowstrike", "Fireblood", "Iceflame", "Stormrage", "Shadowthorn", "Sundreamer", "Everbright", "Swiftarrow", "Goldensong", "Wildheart", "Winterblaze", "Frostfury", "Skyweaver", "Soulforge", "Lionheart", 
+        "Brightstar", "Stargazer", "Dreamweaver", "Sunfire", "Silvershadow", "Falconcrest", "Hawkeye", "Stormbringer", "Thundersong", "Greythorne", "Emberheart", "Shadowdancer", "Duskblade", "Moonwhisper", "Skybreaker", 
+        "Starfury", "Nightshroud", "Swordflame", "Frostspire", "Silvermoon", "Mistwalker", "Stormcaller", "Sunshard", "Riftstorm", "Darkthorn", "Flamecrest", "Wintermoon", "Whitewind", "Wyrmslayer", "Sunshard", 
+        "Ironheart", "Bloodmoon", "Shadowfang", "Thornblade", "Dragonfire", "Darkbane", "Windwalker", "Frostbloom", "Ghostveil", "Sunshadow", "Moonwind", "Darkflame", "Evernight", "Nightstalker", "Wintershade", "Skyblade", 
+        "Soulthorn", "Sapphireheart", "Voidcatcher", "Runeblaze", "Loreweaver", "Soulreaper", "Nightblade", "Dreamweft", "Celestialsong", "Dreadwalker", "Whispershade", "Bloodcry", "Starshaper", "Winterborn", "Stormrend", 
+        "Hallowgrave", "Shadownova", "Blazefury", "Everdusk", "Mournhold", "Frostsong", "Abyssheart", "Aurorblade", "Whirlspire", "Ghoulbane", "Sunshroud", "Vortexbreak", "Hallowsoul", "Sorrowspell", "Dragonhowl", 
+        "Nighthaven", "Mistshroud", "Silentwatch", "Blightstrike", "Heartforge", "Spiritflame", "Thornrift", "Gloomstalker", "Harrowlight", "Lifewraith", "Grayfrost", "Starflayer", "Frostthorn", "Moonfury", "Silverthorn", 
+        "Duskblade", "Shadowcloak", "Earthbloom", "Flamestrike", "Icewhisper", "Stormblade", "Nightshade", "Wildfire", "Starflame", "Lifedream", "Stormcloak", "Wintermoon", "Auroraheart", "Stardream", "Soulshard", 
+        "Thundercloud", "Mistysong", "Swordshield", "Dreamcaster", "Darkphoenix", "Emberstorm", "Desertwind", "Dragonsong", "Shadowmoon", "Frostfire", "Whispershade", "Silentwood", "Blazewater", "Nightflame", "Frostveil", 
+        "Lightningrod", "Thunderstone", "Moonwater", "Bloodmoon", "Darkfrost", "Greyfury", "Voidwhisper", "Emeraldwind", "Mysticflame", "Rainbloom", "Bladewood", "Thunderheart", "Fireforge", "Mistwalker", "Shadowstrike", 
+        "Nightbloom", "Silvershade", "Ravensong", "Stargazer", "Soulslayer", "Frostflame", "Moonwhisperer", "Stormbringer", "Dragonshadow", "Starfury", "Winterbane", "Dawnthorn", "Frostwhisper", "Nightflame", "Thornbloom", 
+        "Sorrowsong", "Dreamwielder", "Silverstorm", "Shadowdancer", "Wyrmblade", "Frostveil", "Dreamweaver", "Steelheart", "Nightshade", "Blazewood", "Whisperingwind", "Emberheart", "Starwalker", "Stormbringer", "Froststrike", 
+        "Duskshadow", "Lightrunner", "Runeblade", "Firethorn", "Shadowbane", "Thornweaver", "Silvershade", "Moonriver", "Nightstalker", "Stormcaller", "Darkflame", "Silentwind", "Wintershadow", "Dragonheart", "Skyfire", 
+        "Mistwalker", "Voidwhisper", "Frostblade", "Darkmoon", "Dreamweaver", "Soulshadow", "Frostwind", "Thunderstrike", "Wolfsbane", "Starlight", "Soulfire", "Darkwolf", "Burningheart", "Frostwhisper", "Nightflame", "Stormrunner", 
+        "Ironbane", "Skyshadow", "Silvermoon", "Thornshade", "Darkthorn", "Whitewolf", "Bloodmoon", "Duskblade", "Firestorm", "Emberflame", "Nightwhisper", "Shadowheart", "Icewind", "Steelthorn", "Moonblade", "Silentstorm", 
+        "Shadowflame", "Firestorm", "Nightshade", "Thundershield", "Silentflame", "Shadowfury", "Winterbreeze", "Moonshadow", "Silentthorn", "Wolfsong", "Thunderthorn", "Silentmoon", "Frostflame", "Stormfury", "Darkthorn", 
+        "Frostblade", "Icemist", "Silentdusk", "Firewhisper", "Shadowbreeze", "Blazefury", "Nightwalker", "Darkshadow", "Stormsinger", "Frostflame", "Silverblade", "Moonlight", "Soulshadow", "Thornshadow", "Darkflame", 
+        "Lightningstrike", "Stormbringer", "Darksong", "Nightfury", "Silverfrost", "Fireheart", "Shadowstrike", "Thornbreeze", "Wintermoon", "Nightshadow", "Silentmoon", "Frostshade", "Dreamshadow", "Stormshadow", "Thunderflame", 
+        "Darkmoon", "Brightflame", "Wolffire", "Moonshadow", "Thundermoon", "Silentfrost", "Stormblaze", "Duskshadow", "Firestorm", "Nightwhisper"
+      ]
+}
 const races = ["Aarakocra", "Aasimar", "Air Genasi", "Astral Elf", "Autognome", "Bugbear", "Centaur", "Changling", "Deep Gnome", "Dragonborn", "Duergar", "Hill Dwarf", "Mountain Dwarf", "Gray Dwarf", "Earth Genasi", "Eladrin", "High Elf", "Wood Elf", "Eladrin Elf", "Dark Elf", "Fairy", "Firbolg", "Fire Genasi", "Water Genasi", "Giff", "Githyanki", "Githzerai", "Deep Gnome", "Forest Gnome", "Rock Gnome", "Goblin", "Goliath", "Hadozee", "Half-Elf", "Half-Orc", "Ghostwise Halfling", "Lightfoot Halfling", "Stout Halfling", "Harengon", "Hobgoblin", "Variant Human", "Human", "Kalashtar", "Kender", "Kenku", "Kobold", "Lizardfolk", "Loxodon", "Minotaur", "Orc", "Orc of Eberron", "Plasmoid", "Satyr", "Sea Elf", "Shadar-kai", "Beasthide Shifter", "Shifter", "Longtooth Shifter", "Swiftstride Shifter", "Wildhunt Shifter", "Simic Hybrid", "Tabaxi", "Thri-kreen", "Tiefling", "Feral Tiefling", "Variant Feral Tiefling", "Variant Tiefling", "Tortle", "Variant Aasimar", "Vedalken", "Warforged", "Yuan-ti"];
 const classes = ["Artificer", "Barbarian", "Bard", "BloodHunter", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
 const subclasses = {
@@ -164,15 +225,24 @@ function FillBackgroundDdl() {
     }
 }
 
-function ResetSetup(randomCheckboxRace, randomCheckboxClass, randomCheckboxSubclass, randomCheckboxBackground, ddlRaces, ddlClasses, ddlSubclasses, ddlBackground) {
+function ResetSetup(randomCheckboxLevel, randomCheckboxGender, randomCheckboxName, randomCheckboxRace, randomCheckboxClass, randomCheckboxSubclass, randomCheckboxBackground, ddlLevels, ddlGenders, txtName, ddlRaces, ddlClasses, ddlSubclasses, ddlBackground) {
+    randomCheckboxLevel.checked = false;
+    randomCheckboxGender.checked = false;
+    randomCheckboxName.checked = false;
     randomCheckboxRace.checked = false;
     randomCheckboxClass.checked = false;
     randomCheckboxSubclass.checked = false;
     randomCheckboxBackground.checked = false;
+    ddlLevels.disabled = false;
+    ddlGenders.disabled = false;
+    txtName.disabled = false;
     ddlRaces.disabled = false;
     ddlClasses.disabled = false;
     ddlSubclasses.disabled = false;
     ddlBackground.disabled = false;
+    ddlLevels.value = "";
+    ddlGenders.value = "";
+    txtName.value = "";
     ddlRaces.value = "";
     ddlClasses.value = "";
     ddlBackground.value = "";
@@ -188,19 +258,23 @@ function ResetSetup(randomCheckboxRace, randomCheckboxClass, randomCheckboxSubcl
 document.addEventListener("DOMContentLoaded", function () {
     const randomCheckbox = document.getElementById('chkRandom');
     const randomCheckboxLevel = document.getElementById('chkRandomLevel');
+    const randomCheckboxGender = document.getElementById('chkRandomGender');
+    const randomCheckboxName = document.getElementById('chkRandomName');
     const randomCheckboxRace = document.getElementById('chkRandomRace');
     const randomCheckboxClass = document.getElementById('chkRandomClass');
     const randomCheckboxSubclass = document.getElementById('chkRandomSubclass');
     const randomCheckboxBackground = document.getElementById('chkRandomBackground');
     const manualSelection = document.getElementById('manualSelection');
     const ddlLevels = document.getElementById('levels');
+    const ddlGenders = document.getElementById('genders');
+    const txtName = document.getElementById('txtName');
     const ddlRaces = document.getElementById('races');
     const ddlClasses = document.getElementById('classes');
     const ddlSubclasses = document.getElementById('subclasses');
     const ddlBackground = document.getElementById('background');
 
     randomCheckbox.addEventListener('change', function () {
-        ResetSetup(randomCheckboxRace, randomCheckboxClass, randomCheckboxSubclass, randomCheckboxBackground, ddlRaces, ddlClasses, ddlSubclasses, ddlBackground);
+        ResetSetup(randomCheckboxLevel, randomCheckboxGender, randomCheckboxName, randomCheckboxRace, randomCheckboxClass, randomCheckboxSubclass, randomCheckboxBackground, ddlLevels, ddlGenders, txtName, ddlRaces, ddlClasses, ddlSubclasses, ddlBackground);
         if (this.checked) {
             console.log("Checkbox is checked..");
             manualSelection.style.display = 'none';
@@ -217,6 +291,26 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             console.log("Checkbox is not checked..");
             ddlLevels.disabled = false;
+        }
+    });
+
+    randomCheckboxGender.addEventListener('change', function () {
+        if (this.checked) {
+            console.log("Checkbox is checked..");
+            ddlGenders.disabled = true;
+        } else {
+            console.log("Checkbox is not checked..");
+            ddlGenders.disabled = false;
+        }
+    });
+
+    randomCheckboxName.addEventListener('change', function () {
+        if (this.checked) {
+            console.log("Checkbox is checked..");
+            txtName.disabled = true;
+        } else {
+            console.log("Checkbox is not checked..");
+            txtName.disabled = false;
         }
     });
 
@@ -3339,13 +3433,6 @@ function CurrentStatSelection(playerClass, stats) {
 
     switch (playerClass) {
         case "Artificer":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats.INT;
             index = 3;
             if (currentStat >= 20) {
@@ -3374,13 +3461,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Barbarian":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[0];
             index = 0;
             if (currentStat >= 20) {
@@ -3409,13 +3489,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Bard":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[5];
             index = 5;
             if (currentStat >= 20) {
@@ -3444,13 +3517,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "BloodHunter":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[0];
             index = 0;
             if (currentStat >= 20) {
@@ -3479,13 +3545,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Cleric":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[4];
             index = 4;
             if (currentStat >= 20) {
@@ -3514,13 +3573,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Druid":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[4];
             index = 4;
             if (currentStat >= 20) {
@@ -3549,13 +3601,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Fighter":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[0];
             index = 0;
             if (currentStat >= 20) {
@@ -3584,13 +3629,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Monk":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[1];
             index = 1;
             if (currentStat >= 20) {
@@ -3619,13 +3657,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Paladin":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[0];
             index = 0;
             if (currentStat >= 20) {
@@ -3654,13 +3685,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Ranger":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[1];
             index = 1;
             if (currentStat >= 20) {
@@ -3689,13 +3713,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Rogue":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[1];
             index = 1;
             if (currentStat >= 20) {
@@ -3724,13 +3741,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Sorcerer":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[5];
             index = 5;
             if (currentStat >= 20) {
@@ -3759,13 +3769,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Warlock":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[5];
             index = 5;
             if (currentStat >= 20) {
@@ -3794,13 +3797,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         case "Wizard":
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[3];
             index = 3;
             if (currentStat >= 20) {
@@ -3829,13 +3825,6 @@ function CurrentStatSelection(playerClass, stats) {
             }
             break;
         default:
-            // Stat Order
-            // STR 0
-            // DEX 1
-            // CON 2 
-            // INT 3
-            // WIS 4
-            // CHA 5
             currentStat = stats[3];
             index = 3;
             if (currentStat >= 20) {
@@ -3870,7 +3859,6 @@ function CurrentStatSelection(playerClass, stats) {
 //Helper function to order stats based on class
 function CharacterStatOrder(playerClass) {
     var statOrder = []
-
     // Stat Order
     // STR
     // DEX
@@ -4003,20 +3991,40 @@ function CharacterStatOrder(playerClass) {
     return statOrder;
 }
 
+function getRandomCharacterName(genderType) {
+    var firstName = "";
+    if (genderType == "male") {
+        firstName = getRandomElement(names.maleFirstNames);
+    }
+    else{
+        firstName = getRandomElement(names.femaleFirstNames);
+    }
+    var lastName = getRandomElement(names.lastNames);
+    var fullName = firstName + " " + lastName;
+
+    return fullName;
+}
+
 // Function to generate a random player character
 function GenerateCharacter() {
     const randomCheckbox = document.getElementById('chkRandom');
     const randomCheckboxLevel = document.getElementById('chkRandomLevel');
+    const randomCheckboxGender = document.getElementById('chkRandomGender');
+    const randomCheckboxName = document.getElementById('chkRandomName');
     const randomCheckboxRace = document.getElementById('chkRandomRace');
     const randomCheckboxClass = document.getElementById('chkRandomClass');
     const randomCheckboxSubclass = document.getElementById('chkRandomSubclass');
     const randomCheckboxBackground = document.getElementById('chkRandomBackground');
     const ddlLevels = document.getElementById('levels');
+    const ddlGenders = document.getElementById('genders');
+    const txtName = document.getElementById('txtName');
     const ddlRaces = document.getElementById('races');
     const ddlClasses = document.getElementById('classes');
     const ddlSubclasses = document.getElementById('subclasses');
     const ddlBackground = document.getElementById('background');
     var level;
+    var genderType;
+    var name;
     var race;
     var playerClass;
     var subclass;
@@ -4024,7 +4032,9 @@ function GenerateCharacter() {
 
     if (randomCheckbox.checked) {
         level = getRandomElement(levels);
+        genderType = getRandomElement(genders);
         race = getRandomElement(races);
+        name = getRandomCharacterName(genderType, race);
         playerClass = getRandomElement(classes);
         subclass = subclasses[playerClass] ? getRandomElement(subclasses[playerClass]) : "N/A";
         background = getRandomElement(backgrounds);
@@ -4033,6 +4043,18 @@ function GenerateCharacter() {
             level = ddlLevels.value;
         } else {
             level = getRandomElement(levels);
+        }
+
+        if (randomCheckboxGender.checked === false && ddlGenders.value.length > 0) {
+            genderType = ddlGenders.value;
+        } else {
+            genderType = getRandomElement(genders);
+        }
+
+        if (randomCheckboxName.checked === false && txtName.value.length > 0) {
+            name = txtName.value;
+        } else {
+            name = getRandomCharacterName(genderType);
         }
 
         if (randomCheckboxRace.checked === false && ddlRaces.value.length > 0) {
@@ -4058,6 +4080,13 @@ function GenerateCharacter() {
         } else {
             background = getRandomElement(backgrounds);
         }
+    }
+
+    if (genderType == "male") {
+        genderType = "Masculine"
+    }
+    else{
+        genderType = "Feminine"
     }
 
     const statOrder = CharacterStatOrder(playerClass);
@@ -4101,6 +4130,8 @@ function GenerateCharacter() {
     // Construct and return the character object
     const character = {
         level,
+        genderType,
+        name,
         race,
         class: playerClass,
         subclass,
@@ -4114,6 +4145,8 @@ function CreateCharacter() {
     var randomCheckbox = document.getElementById('chkRandom');
     var characterDetails = document.getElementById('characterDetails');
     var detailLevel = document.getElementById('detailLevel');
+    var detailGender = document.getElementById('detailGender');
+    var detailName = document.getElementById('detailName');
     var detailRace = document.getElementById('detailRace');
     var detailClass = document.getElementById('detailClass');
     var detailSubClass = document.getElementById('detailSubClass');
@@ -4129,6 +4162,8 @@ function CreateCharacter() {
 
     characterDetails.style.display = '';
     detailLevel.innerText = 'Level: ' + newCharacter.level;
+    detailGender.innerText = 'Gender Type: ' + newCharacter.genderType;
+    detailName.innerText = 'Name: ' + newCharacter.name;
     detailRace.innerText = 'Race: ' + newCharacter.race;
     detailClass.innerText = 'Class: ' + newCharacter.class;
     detailSubClass.innerText = 'Subclass: ' + newCharacter.subclass;

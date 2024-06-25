@@ -22,7 +22,7 @@ border: 3px solid #bf3f3f;
 }
 
 .btnBackColor {
-background-color: #bf3f3f;
+background-color: #d4af37;
 }
 
 .options {
@@ -48,7 +48,7 @@ text-align: center;
 
 button {
 padding: 10px 20px;
-color: #fff;
+color: #bf3f3f;
 border: none;
 border-radius: 5px;
 cursor: pointer;
@@ -56,7 +56,8 @@ transition: background-color 0.3s;
 }
 
 button:hover {
-background-color: #d4af37; 
+color: #d4af37;
+background-color: #bf3f3f; 
 }
 
 #characterDetails {

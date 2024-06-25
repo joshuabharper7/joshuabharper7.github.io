@@ -249,7 +249,7 @@ function ResetSetup(randomCheckboxLevel, randomCheckboxGender, randomCheckboxNam
     document.getElementById('characterDetails').style.display = 'none';
 
     removeOptions(ddlSubclasses);
-    AdjustColors("#d4af37", "#bf3f3f");
+    AdjustColors("#FFFFFF", "#bf3f3f");
     var opt = document.createElement('option');
     opt.value = "";
     opt.innerHTML = "Select A Subclass";

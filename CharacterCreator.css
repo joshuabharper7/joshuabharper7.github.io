@@ -1,72 +1,91 @@
 body {
-    background-color: #1a1a1a; /* Dark background */
-    color: #fff; /* White text for contrast */
-    font-family: 'Garamond', serif; /* Elegant font for a fantasy touch */
-    text-align: center;
-  }
-  
-  h1 {
-    color: #d4af37; /* Gold color for titles */
-    text-shadow: 2px 2px 4px #333; /* Text shadow for depth */
-  }
-  
-  h2, h3 {
-    color: #bf3f3f; /* Deep red color for section headers */
-  }
-  
-  section.options {
-    margin: 20px auto;
-    padding: 15px;
-    border: 3px solid #bf3f3f; /* Red border for sections */
-    border-radius: 10px;
-    background-color: #1f1f1f; /* Dark background for sections */
-  }
-  
-  input[type="checkbox"] {
-    accent-color: #d4af37; /* Gold color for checkboxes */
-  }
-  
-  input[type="text"], select {
-    padding: 8px;
-    margin: 10px 0;
-    border: 2px solid #bf3f3f; /* Red border for input fields */
-    border-radius: 5px;
-    background-color: #1f1f1f; /* Dark background for input fields */
-    color: #fff;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #bf3f3f; /* Deep red button color */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #d4af37; /* Gold color on hover */
-  }
-  
-  #characterDetails {
-    background-color: #1f1f1f; /* Dark background for character details */
-    padding: 20px;
-    border: 3px solid #bf3f3f; /* Red border for character details */
-    border-radius: 10px;
-    margin: 20px auto;
-  }
-  
-  #characterDetails ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  button {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Shadow for button elevation */
-  }
-  
-  input[type="checkbox"] + label::before {
-    content: "🎲"; /* Custom dice icon before label */
-    margin-right: 5px;
-  }
+  background-color: #1a1a1a;
+  color: #fff; 
+  font-family: 'Garamond', serif; 
+  text-align: center;
+}
+
+h1, label, text {
+text-shadow: 2px 2px 4px #333; 
+}
+
+.textColorPrimary {
+color: #d4af37;
+}
+
+.textColorSecondary {
+color: #bf3f3f; 
+}
+
+.borderColor {
+border: 3px solid #bf3f3f;
+}
+
+.btnBackColor {
+background-color: #bf3f3f;
+}
+
+.options {
+margin: 20px auto;
+padding: 15px; 
+border-radius: 10px;
+background-color: #1f1f1f;
+}
+
+input[type="checkbox"] {
+accent-color: #d4af37; 
+}
+
+input[type="text"], select {
+padding: 8px;
+margin: 10px 0;
+border-radius: 5px;
+background-color: #1f1f1f; 
+color: #fff;
+width: 170px;
+text-align: center;
+}
+
+button {
+padding: 10px 20px;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+button:hover {
+background-color: #d4af37; 
+}
+
+#characterDetails {
+background-color: #1f1f1f; 
+padding: 20px;
+border: 3px solid;
+border-radius: 10px;
+margin: 20px auto;
+}
+
+#characterDetails ul {
+list-style: none;
+padding: 0;
+}
+
+button {
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#chkRandom + label::before {
+content: "🎲"; /* Custom dice icon before label */
+margin-right: 5px;
+}
+
+.ddlContainerDiv {
+margin-left: 6em;
+}
+
+img {
+width: 250px;
+height: 250px;
+}

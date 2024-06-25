@@ -11,93 +11,108 @@
 
 <body>
     <header>
-        <h1>Dungeons & Dragons Character Creation</h1>
+        <h1 class="textColorPrimary">Dungeons & Dragons Character Creation</h1>
     </header>
     <main>
-        <section class="options">
+        <section class="options borderColor">
             <input type="checkbox" id="chkRandom" name="chkRandom" value="random">
-            <label for="chkRandom">Randomize All</label><br>
+            <label class="textColorPrimary" for="chkRandom">Randomize All</label><br>
         </section>
         <div id="manualSelection">
-            <section class="options">
-                <h1>Choose Your Level:<input type="checkbox" id="chkRandomLevel" name="chkRandomLevel" value="random">
-                    <label for="chkRandomLevel" style="font-size: x-small;">Randomize Level</label><br>
-                </h2>
-                <select name="levels" id="levels">
-                    <option value="">Select a Level</option>
-                </select>
+            <section class="options borderColor">
+                <h1 class="textColorPrimary">Choose Your Level:</h1>
+                <div class="ddlContainerDiv">
+                    <select class="borderColor" name="levels" id="levels">
+                        <option value="">Select a Level</option>
+                    </select>
+                    <input type="checkbox" id="chkRandomLevel" name="chkRandomLevel" value="random">
+                    <label class="textColorPrimary" for="chkRandomLevel">Randomize</label>
+                </div>
             </section>
-            <section class="options">
-                <h1>Choose Your Gender Type:<input type="checkbox" id="chkRandomGender" name="chkRandomGender" value="random">
-                    <label for="chkRandomGender" title="Used for random name generation" style="font-size: x-small;">Randomize Gender Type</label><br>
-                </h2>
-                <select name="genders" id="genders">
-                    <option value="">Select a Gender Type</option>
-                    <option value="male">Masculine</option>
-                    <option value="female">Feminine</option>
-                </select>
+            <section class="options borderColor">
+                <h1 class="textColorPrimary">Choose Your Gender Type:</h1>
+                <div class="ddlContainerDiv">
+                    <select class="borderColor" name="genders" id="genders">
+                        <option value="">Select a Gender Type</option>
+                        <option value="male">Masculine</option>
+                        <option value="female">Feminine</option>
+                    </select>
+                    <input type="checkbox" id="chkRandomGender" name="chkRandomGender" value="random">
+                    <label class="textColorPrimary" for="chkRandomGender" title="Used for random name generation">Randomize</label>
+                </div>
             </section>
-            <section class="options">
-                <h1>Choose Your Name:<input type="checkbox" id="chkRandomName" name="chkRandomName" value="random">
-                    <label for="chkRandomName" style="font-size: x-small;">Randomize Name</label><br>
-                </h2>
-                <input id="txtName" name="txtName" placeholder="Character Name..." type="text"/>
+            <section class="options borderColor">
+                <h1 class="textColorPrimary">Choose Your Name:</h1>
+                <div class="ddlContainerDiv">
+                    <input id="txtName" class="borderColor" name="txtName" style="width: 155px;" placeholder="Character Name..." type="text"/>
+                    <input type="checkbox" id="chkRandomName" name="chkRandomName" value="random">
+                    <label class="textColorPrimary" for="chkRandomName">Randomize</label>
+                </div>
             </section>
-            <section class="options">
-                <h1>Choose Your Race:<input type="checkbox" id="chkRandomRace" name="chkRandomRace" value="random">
-                    <label for="chkRandomRace" style="font-size: x-small;">Randomize Race</label><br>
-                </h2>
-                <select name="races" id="races">
-                    <option value="">Select a Race</option>
-                </select>
+            <section class="options borderColor">
+                <h1 class="textColorPrimary">Choose Your Race:</h1>
+                <div class="ddlContainerDiv">
+                    <select class="borderColor" name="races" id="races">
+                        <option value="">Select a Race</option>
+                    </select>
+                    <input type="checkbox" id="chkRandomRace" name="chkRandomRace" value="random">
+                    <label class="textColorPrimary" for="chkRandomRace">Randomize</label>
+                </div>
             </section>
-            <section class="options">
-                <h1>Choose Your Class:<input type="checkbox" id="chkRandomClass" name="chkRandomClass" value="random">
-                    <label for="chkRandomClass" style="font-size: x-small;">Randomize Class</label><br>
-                </h2>
-                <select name="classes" id="classes">
-                    <option value="">Select a Class</option>
-                </select>
+            <section class="options borderColor">
+                <h1 class="textColorPrimary">Choose Your Class:</h1>
+                <div class="ddlContainerDiv">
+                    <select class="borderColor" name="classes" id="classes">
+                        <option value="">Select a Class</option>
+                    </select>
+                    <input type="checkbox" id="chkRandomClass" name="chkRandomClass" value="random">
+                    <label class="textColorPrimary" for="chkRandomClass">Randomize</label><br>
+                </div>
             </section>
-            <section class="options">
-                <h1>Choose Your Subclass:<input type="checkbox" id="chkRandomSubclass" name="chkRandomSubclass" value="random">
-                    <label for="chkRandomSubclass" style="font-size: x-small;">Randomize Subclass</label><br>
-                </h2>
-                <select name="subclasses" id="subclasses">
-                    <option value="">Select a Subclass</option>
-                </select>
+            <section class="options borderColor">
+                <h1 class="textColorPrimary">Choose Your Subclass:</h1>
+                <div class="ddlContainerDiv">
+                    <select class="borderColor" name="subclasses" id="subclasses">
+                        <option value="">Select a Subclass</option>
+                    </select>
+                    <input type="checkbox" id="chkRandomSubclass" name="chkRandomSubclass" value="random">
+                    <label class="textColorPrimary" for="chkRandomSubclass">Randomize</label>
+                </div>
             </section>
-            <section class="options">
-                <h1>Choose Your Background:<input type="checkbox" id="chkRandomBackground" name="chkRandomBackground" value="random">
-                    <label for="chkRandomBackground" style="font-size: x-small;">Randomize Background</label><br>
-                </h2>
-                <select name="background" id="background">
-                    <option value="">Select a Background</option>
-                </select>
+            <section class="options borderColor">
+                <h1 class="textColorPrimary">Choose Your Background:</h1>
+                <div class="ddlContainerDiv">
+                    <select class="borderColor" name="background" id="background">
+                        <option value="">Select a Background</option>
+                    </select>
+                    <input type="checkbox" id="chkRandomBackground" name="chkRandomBackground" value="random">
+                    <label class="textColorPrimary" for="chkRandomBackground">Randomize</label>
+                </div>
             </section>
         </div>
         <br/>
-        <div id="characterDetails" style="display: none;">
-            <h1>Character Details</h1>
-            <h3 id="detailLevel">Level: </h3>
-            <h3 id="detailGender">Gender Type: </h3>
-            <h3 id="detailName">Name: </h3>
-            <h3 id="detailRace">Race: </h3>
-            <h3 id="detailClass">Class: </h3>
-            <h3 id="detailSubClass">Subclass: </h3>
-            <h3 id="detailBackground">Background: </h3>
-            <h3 id="detailStats">Ability Scores- </h3>
+        <div id="characterDetails" class="borderColor" style="display: none;">
+            <h1 class="textColorPrimary">Character Details</h1>
+            <img id="classImg" src="images/Dice image.png" alt="Class Logo">
+            <h3 id="detailLevel" class="textColorSecondary">Level: <text id="detailLevelText" class="textColorPrimary"></text></h3>
+            <h3 id="detailGender" class="textColorSecondary">Gender Type: <text id="detailGenderText" class="textColorPrimary"></text> </h3>
+            <h3 id="detailName" class="textColorSecondary">Name: <text id="detailNameText" class="textColorPrimary"></text> </h3>
+            <h3 id="detailRace" class="textColorSecondary">Race: <text id="detailRaceText" class="textColorPrimary"></text> </h3>
+            <h3 id="detailClass" class="textColorSecondary">Class: <text id="detailClassText" class="textColorPrimary"></text> </h3>
+            <h3 id="detailSubClass" class="textColorSecondary">Subclass: <text id="detailSubClassText" class="textColorPrimary"></text> </h3>
+            <h3 id="detailBackground" class="textColorSecondary">Background: <text id="detailBackgroundText" class="textColorPrimary"></text> </h3>
+            <h3 id="detailStats" class="textColorSecondary">Ability Scores- </h3>
             <ul>
-                <li id="strStat">STR: </li>
-                <li id="dexStat">DEX: </li>
-                <li id="conStat">CON: </li>
-                <li id="intStat">INT: </li>
-                <li id="wisStat">WIS: </li>
-                <li id="chaStat">CHA: </li>
+                <li id="strStat" class="textColorSecondary">STR: <text id="strStatText" class="textColorPrimary"></text> </li>
+                <li id="dexStat" class="textColorSecondary">DEX: <text id="dexStatText" class="textColorPrimary"></text> </li>
+                <li id="conStat" class="textColorSecondary">CON: <text id="conStatText" class="textColorPrimary"></text> </li>
+                <li id="intStat" class="textColorSecondary">INT: <text id="intStatText" class="textColorPrimary"></text> </li>
+                <li id="wisStat" class="textColorSecondary">WIS: <text id="wisStatText" class="textColorPrimary"></text> </li>
+                <li id="chaStat" class="textColorSecondary">CHA: <text id="chaStatText" class="textColorPrimary"></text> </li>
             </ul>
         </div>
         <br/>
-        <button onclick="CreateCharacter()">Create Character</button>
+        <button id="btnGenerate" class="btnBackColor" onclick="CreateCharacter()">Create Character</button>
     </main>
 </body>
 

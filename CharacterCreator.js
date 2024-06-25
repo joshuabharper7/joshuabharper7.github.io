@@ -249,6 +249,7 @@ function ResetSetup(randomCheckboxLevel, randomCheckboxGender, randomCheckboxNam
     document.getElementById('characterDetails').style.display = 'none';
 
     removeOptions(ddlSubclasses);
+    AdjustColors("#d4af37", "#bf3f3f");
     var opt = document.createElement('option');
     opt.value = "";
     opt.innerHTML = "Select A Subclass";
@@ -3856,9 +3857,39 @@ function CurrentStatSelection(playerClass, stats) {
     return index;
 }
 
+function AdjustColors(primaryColor, secondaryColor) {
+    var textColorPrimary = document.querySelectorAll('.textColorPrimary');
+    var textColorSecondary = document.querySelectorAll('.textColorSecondary');
+    var borderColor = document.querySelectorAll('.borderColor');
+    var characterDetails = document.getElementById('characterDetails');
+    var button = document.getElementById('btnGenerate');
+    
+    button.style.backgroundColor = primaryColor;
+    button.style.color = secondaryColor;
+    button.addEventListener('mouseover', function() {
+        button.style.backgroundColor = secondaryColor;
+        button.style.color = primaryColor;
+    });
+    button.addEventListener('mouseout', function() {
+        button.style.backgroundColor = primaryColor; 
+        button.style.color = secondaryColor; 
+    });
+    textColorPrimary.forEach(element => {
+        element.style.color = primaryColor;
+    });
+    textColorSecondary.forEach(element => {
+        element.style.color = secondaryColor;
+    });
+    borderColor.forEach(element => {
+        element.style.borderColor = secondaryColor;
+    });
+    characterDetails.style.borderColor = secondaryColor;
+}
+
 //Helper function to order stats based on class
-function CharacterStatOrder(playerClass) {
+function CharacterStatOrderAndStyle(playerClass) {
     var statOrder = []
+    var classImg = document.getElementById('classImg');
     // Stat Order
     // STR
     // DEX
@@ -3869,6 +3900,8 @@ function CharacterStatOrder(playerClass) {
 
     switch (playerClass) {
         case "Artificer":
+            AdjustColors("#FD5E02", "#5F9B9B");
+            classImg.src = 'images/Artificer.png';
             statOrder.push(4)
             statOrder.push(2)
             statOrder.push(1)
@@ -3877,6 +3910,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(5)
             break;
         case "Barbarian":
+            AdjustColors("#FFFFFF", "#e8633f");
+            classImg.src = 'images/Barbarian.png';
             statOrder.push(0)
             statOrder.push(2)
             statOrder.push(1)
@@ -3885,6 +3920,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(4)
             break;
         case "Bard":
+            AdjustColors("#FFFFFF", "#AA6DAB");
+            classImg.src = 'images/Bard.png';
             statOrder.push(5)
             statOrder.push(1)
             statOrder.push(2)
@@ -3893,6 +3930,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(0)
             break;
         case "BloodHunter":
+            AdjustColors("#CAC9C9", "#671917");
+            classImg.src = 'images/Bloodhunter.png';
             statOrder.push(0)
             statOrder.push(3)
             statOrder.push(2)
@@ -3901,6 +3940,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(4)
             break;
         case "Cleric":
+            AdjustColors("#FBFBFB", "#D4AF37");
+            classImg.src = 'images/Cleric.png';
             statOrder.push(2)
             statOrder.push(3)
             statOrder.push(1)
@@ -3909,6 +3950,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(4)
             break;
         case "Druid":
+            AdjustColors("#FBFBFB", "#8DAB51");
+            classImg.src = 'images/Druid.png';
             statOrder.push(5)
             statOrder.push(2)
             statOrder.push(1)
@@ -3917,6 +3960,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(3)
             break;
         case "Fighter":
+            AdjustColors("#88001B", "#B99038");
+            classImg.src = 'images/Fighter.png';
             statOrder.push(0)
             statOrder.push(1)
             statOrder.push(2)
@@ -3925,6 +3970,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(4)
             break;
         case "Monk":
+            AdjustColors("#F7975D", "#B5B4B0");
+            classImg.src = 'images/Monk.png';
             statOrder.push(4)
             statOrder.push(0)
             statOrder.push(2)
@@ -3933,6 +3980,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(3)
             break;
         case "Paladin":
+            AdjustColors("#989896", "#DAC282");
+            classImg.src = 'images/Paladin.png';
             statOrder.push(0)
             statOrder.push(3)
             statOrder.push(2)
@@ -3941,6 +3990,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(1)
             break;
         case "Ranger":
+            AdjustColors("#989896", "#83AA90");
+            classImg.src = 'images/Ranger.png';
             statOrder.push(3)
             statOrder.push(0)
             statOrder.push(2)
@@ -3949,6 +4000,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(4)
             break;
         case "Rogue":
+            AdjustColors("#999999", "#CED4E6");
+            classImg.src = 'images/Rogue.png';
             statOrder.push(5)
             statOrder.push(0)
             statOrder.push(1)
@@ -3957,6 +4010,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(3)
             break;
         case "Sorcerer":
+            AdjustColors("#F1FFD4", "#90BAAC");
+            classImg.src = 'images/Sorcerer.png';
             statOrder.push(5)
             statOrder.push(2)
             statOrder.push(1)
@@ -3965,6 +4020,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(0)
             break;
         case "Warlock":
+            AdjustColors("#FFFFFF", "#A060D8");
+            classImg.src = 'images/Warlock.png';
             statOrder.push(5)
             statOrder.push(2)
             statOrder.push(1)
@@ -3973,6 +4030,8 @@ function CharacterStatOrder(playerClass) {
             statOrder.push(0)
             break;
         case "Wizard":
+            AdjustColors("#FFFFFF", "#4D83DB");
+            classImg.src = 'images/Wizard.png';
             statOrder.push(5)
             statOrder.push(2)
             statOrder.push(1)
@@ -4003,6 +4062,10 @@ function getRandomCharacterName(genderType) {
     var fullName = firstName + " " + lastName;
 
     return fullName;
+}
+
+function StyleBasedOnClass(playerClass) {
+    
 }
 
 // Function to generate a random player character
@@ -4089,7 +4152,7 @@ function GenerateCharacter() {
         genderType = "Feminine"
     }
 
-    const statOrder = CharacterStatOrder(playerClass);
+    const statOrder = CharacterStatOrderAndStyle(playerClass);
     var unsetStats = [];
 
     unsetStats = rollStats().sort(function (a, b) { return a - b }).reverse();
@@ -4144,36 +4207,36 @@ function GenerateCharacter() {
 function CreateCharacter() {
     var randomCheckbox = document.getElementById('chkRandom');
     var characterDetails = document.getElementById('characterDetails');
-    var detailLevel = document.getElementById('detailLevel');
-    var detailGender = document.getElementById('detailGender');
-    var detailName = document.getElementById('detailName');
-    var detailRace = document.getElementById('detailRace');
-    var detailClass = document.getElementById('detailClass');
-    var detailSubClass = document.getElementById('detailSubClass');
-    var detailBackground = document.getElementById('detailBackground');
-    var strStat = document.getElementById('strStat');
-    var dexStat = document.getElementById('dexStat');
-    var conStat = document.getElementById('conStat');
-    var intStat = document.getElementById('intStat');
-    var wisStat = document.getElementById('wisStat');
-    var chaStat = document.getElementById('chaStat');
+    var detailLevelText = document.getElementById('detailLevelText');
+    var detailGenderText = document.getElementById('detailGenderText');
+    var detailNameText = document.getElementById('detailNameText');
+    var detailRaceText = document.getElementById('detailRaceText');
+    var detailClassText = document.getElementById('detailClassText');
+    var detailSubClassText = document.getElementById('detailSubClassText');
+    var detailBackgroundText = document.getElementById('detailBackgroundText');
+    var strStatText = document.getElementById('strStatText');
+    var dexStatText = document.getElementById('dexStatText');
+    var conStatText = document.getElementById('conStatText');
+    var intStatText = document.getElementById('intStatText');
+    var wisStatText = document.getElementById('wisStatText');
+    var chaStatText = document.getElementById('chaStatText');
 
     const newCharacter = GenerateCharacter();
 
     characterDetails.style.display = '';
-    detailLevel.innerText = 'Level: ' + newCharacter.level;
-    detailGender.innerText = 'Gender Type: ' + newCharacter.genderType;
-    detailName.innerText = 'Name: ' + newCharacter.name;
-    detailRace.innerText = 'Race: ' + newCharacter.race;
-    detailClass.innerText = 'Class: ' + newCharacter.class;
-    detailSubClass.innerText = 'Subclass: ' + newCharacter.subclass;
-    detailBackground.innerText = 'Background: ' + newCharacter.background;
-    strStat.innerText = 'STR: ' + newCharacter.stats.STR;
-    dexStat.innerText = 'DEX: ' + newCharacter.stats.DEX;
-    conStat.innerText = 'CON: ' + newCharacter.stats.CON;
-    intStat.innerText = 'INT: ' + newCharacter.stats.INT;
-    wisStat.innerText = 'WIS: ' + newCharacter.stats.WIS;
-    chaStat.innerText = 'CHA: ' + newCharacter.stats.CHA;
+    detailLevelText.innerText = newCharacter.level;
+    detailGenderText.innerText = newCharacter.genderType;
+    detailNameText.innerText = newCharacter.name;
+    detailRaceText.innerText = newCharacter.race;
+    detailClassText.innerText = newCharacter.class;
+    detailSubClassText.innerText = newCharacter.subclass;
+    detailBackgroundText.innerText = newCharacter.background;
+    strStatText.innerText = newCharacter.stats.STR;
+    dexStatText.innerText = newCharacter.stats.DEX;
+    conStatText.innerText = newCharacter.stats.CON;
+    intStatText.innerText = newCharacter.stats.INT;
+    wisStatText.innerText = newCharacter.stats.WIS;
+    chaStatText.innerText = newCharacter.stats.CHA;
 
     console.log(newCharacter);
 }
